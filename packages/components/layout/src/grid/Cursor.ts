@@ -10,7 +10,7 @@ export class Cursor {
   }
 
   private constructor(idx: number) {
-    this.idx = idx < 0 ? -1 : idx;
+    this.idx = idx < 0 ? 0 : idx;
   }
 
   public to(idx: number): this {

@@ -33,7 +33,7 @@ export const Layout: React.FC<LayoutProps> = (props) => {
   React.useEffect(
     () =>
       grid.addListener((update) => {
-        if (typeof onChangeRef.current === 'function') {
+        if (onChangeRef.current) {
           onChangeRef.current({ update, state: grid.extract() });
         }
       }),
