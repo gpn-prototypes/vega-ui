@@ -137,7 +137,7 @@ export class Tree {
 
     if (parent !== undefined && Node.isBranch(parent)) {
       delete this.state[idx];
-      this.lift(cursor.sibling(), cursor.parent());
+      this.lift(cursor.index(), cursor.parent());
     }
   }
 
