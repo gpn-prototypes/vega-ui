@@ -22,7 +22,7 @@ jobs:
           yarn
           yarn et upgrade
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3.8.0
+        uses: peter-evans/create-pull-request@v3.8.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Обновление зависимостей @csssr/e2e-tools
