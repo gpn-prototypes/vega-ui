@@ -21,7 +21,7 @@ jobs:
         with:
           path: vega-ui
 
-      - uses: actions/setup-node@v2.1.4
+      - uses: actions/setup-node@v2.1.5
         with:
           node-version: 12
           registry-url: 'https://npm.pkg.github.com'
