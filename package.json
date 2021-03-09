@@ -94,7 +94,7 @@
   },
   "devDependencies": {
     "@size-limit/preset-big-lib": "^4.5.0",
-    "@storybook/addon-a11y": "^6.1.20",
+    "@storybook/addon-a11y": "^6.1.21",
     "@storybook/addon-docs": "^6.1.20",
     "@storybook/addon-links": "^6.1.20",
     "@storybook/source-loader": "^6.1.20",
