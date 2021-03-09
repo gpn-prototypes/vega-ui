@@ -93,7 +93,7 @@
     "webpack": "^4.46.0"
   },
   "devDependencies": {
-    "@size-limit/preset-big-lib": "^4.5.0",
+    "@size-limit/preset-big-lib": "^4.10.1",
     "@storybook/addon-a11y": "^6.1.20",
     "@storybook/addon-docs": "^6.1.20",
     "@storybook/addon-links": "^6.1.20",
