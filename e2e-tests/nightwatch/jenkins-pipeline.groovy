@@ -121,6 +121,9 @@ pipeline {
           git lfs install
           git lfs pull
           cd e2e-tests
+          rm -f nightwatch/jenkins-report.xml
+          rm -rf nightwatch/failure-screenshots/
+          rm -rf nightwatch/screenshots/diff/
           yarn install --frozen-lockfile
           touch .env
         """
@@ -134,12 +137,12 @@ pipeline {
 
       steps {
         script {
-          withCredentials(browserCredentials) {
+          withCredentials(browserCredentials + [usernamePassword(credentialsId: "browserstack", usernameVariable: "BROWSERSTACK_USER", passwordVariable: "BROWSERSTACK_KEY")]) {
             sh """
               pwd
               cd e2e-tests
               set -x
-              yarn et nightwatch:run --browser remote_chrome ${runParamsString}
+              yarn et nightwatch:run ${runParamsString}
             """
           }
         }

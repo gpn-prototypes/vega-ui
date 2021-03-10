@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2.1.4
+      - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
 
@@ -22,7 +22,7 @@ jobs:
           yarn
           yarn et upgrade
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3.8.0
+        uses: peter-evans/create-pull-request@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Обновление зависимостей @csssr/e2e-tools
