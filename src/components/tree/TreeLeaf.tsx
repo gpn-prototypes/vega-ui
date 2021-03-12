@@ -75,9 +75,9 @@ export const TreeLeaf: React.FC<TreeItem> = (props) => {
         className={cnTree('NavigationItem', {
           Selected: selectedItems?.includes(targetData),
           AccessibleDropZone:
-            withDropZoneIndicator && dropZone && dropZone.id === id && dropZone.accessible,
+            withDropZoneIndicator && dropZone && dropZone.ref === targetRef && dropZone.accessible,
           InaccessibleDropZone:
-            withDropZoneIndicator && dropZone && dropZone.id === id && !dropZone.accessible,
+            withDropZoneIndicator && dropZone && dropZone.ref === targetRef && !dropZone.accessible,
           Hidden: visibilityIdentifier.isHidden,
         })}
         onClick={handleSelect}
