@@ -16,6 +16,5 @@ jobs:
           title-template: ' '
           body-template: |
             ## Задача
-            Стенд: http://%headbranch%.vega-ui-storybook.csssr.cloud
-            Cсылка в Jira CSSSR на задачу: https://jira.csssr.io/browse/%headbranch%
+            Cсылка в Jira CSSSR на задачу: https://jira.konakov.tv/browse/%headbranch%
           body-newline-count: 2
