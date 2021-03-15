@@ -215,3 +215,18 @@ export const createScrollbarPointGetter = (params: ViewData): ScrollbarPointsGet
     return 0;
   };
 };
+
+export const calcCreatedStepPosition = (
+  layer: Konva.Layer | null,
+  stageSize: Size,
+): { x: number; y: number } => {
+  let x = 0;
+  let y = 0;
+
+  if (layer) {
+    x = (stageSize.width / 2 - layer.x()) * (1 / layer.scaleX());
+    y = (stageSize.height / 2 - layer.y()) * (1 / layer.scaleY());
+  }
+
+  return { x, y };
+};

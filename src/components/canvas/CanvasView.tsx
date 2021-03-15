@@ -24,7 +24,12 @@ import { CanvasContext } from './context';
 import { Canvas, CanvasView as CanvasViewEntity, State, Tree, ViewUpdate } from './entities';
 import { metrics } from './metrics';
 import { CanvasData, CanvasTree, ItemType, KonvaMouseEvent, Position, SelectedData } from './types';
-import { createScrollbarPointGetter, getBgRect, getContentPadding } from './utils';
+import {
+  calcCreatedStepPosition,
+  createScrollbarPointGetter,
+  getBgRect,
+  getContentPadding,
+} from './utils';
 
 import './Canvas.css';
 
@@ -400,7 +405,7 @@ export const CanvasView: React.FC<CanvasViewProps> = (props) => {
       const treeData: CanvasData = {
         type,
         title: NAMES_MAP[type],
-        position: { x: window.innerWidth / 3, y: window.innerHeight / 3 },
+        position: calcCreatedStepPosition(layerRef.current, stageSize),
       };
 
       if (type === 'step') {
@@ -414,7 +419,7 @@ export const CanvasView: React.FC<CanvasViewProps> = (props) => {
       const tree = Tree.of<CanvasData>({ data: treeData });
       canvas.add(tree);
     },
-    [canvas],
+    [canvas, stageSize],
   );
 
   const { height: containerHeight, width: containerWidth } = useResizeObserver(containerRef);
